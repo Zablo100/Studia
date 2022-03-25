@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TextArea fx:id="Text" layoutX="12.0" layoutY="22.0" prefHeight="531.0" prefWidth="976.0" />
+      <Button layoutX="322.0" layoutY="553.0" mnemonicParsing="false" onAction="#zapisz" prefHeight="39.0" prefWidth="178.0" text="Zapisz" />
+      <Button layoutX="500.0" layoutY="553.0" mnemonicParsing="false" onAction="#wczytaj" prefHeight="39.0" prefWidth="178.0" text="Wczytaj" />
+   </children>
+</Pane>

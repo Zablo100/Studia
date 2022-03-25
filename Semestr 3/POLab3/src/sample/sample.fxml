@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="M" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="428.0" prefWidth="415.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Button id="1" fx:id="b1" layoutX="57.0" layoutY="66.0" mnemonicParsing="false" onAction="#click" prefHeight="102.0" prefWidth="104.0" />
+      <Button id="4" fx:id="b4" layoutX="57.0" layoutY="168.0" mnemonicParsing="false" onAction="#click" prefHeight="102.0" prefWidth="104.0" />
+      <Button id="7" fx:id="b7" layoutX="57.0" layoutY="270.0" mnemonicParsing="false" onAction="#click" prefHeight="102.0" prefWidth="104.0" />
+      <Button id="2" fx:id="b2" layoutX="161.0" layoutY="66.0" mnemonicParsing="false" onAction="#click" prefHeight="102.0" prefWidth="104.0" />
+      <Button id="5" fx:id="b5" layoutX="161.0" layoutY="168.0" mnemonicParsing="false" onAction="#click" prefHeight="102.0" prefWidth="104.0" />
+      <Button id="8" fx:id="b8" layoutX="161.0" layoutY="270.0" mnemonicParsing="false" onAction="#click" prefHeight="102.0" prefWidth="104.0" />
+      <Button id="3" fx:id="b3" layoutX="265.0" layoutY="66.0" mnemonicParsing="false" onAction="#click" prefHeight="102.0" prefWidth="104.0" />
+      <Button id="6" fx:id="b6" layoutX="265.0" layoutY="168.0" mnemonicParsing="false" onAction="#click" prefHeight="102.0" prefWidth="104.0" />
+      <Button id="9" fx:id="b9" layoutX="265.0" layoutY="270.0" mnemonicParsing="false" onAction="#click" prefHeight="102.0" prefWidth="104.0" />
+      <Label fx:id="winnerLable" alignment="CENTER" layoutX="109.0" layoutY="22.0" prefHeight="35.0" prefWidth="191.0" text="Runda gracza O!" wrapText="true" />
+      <Button layoutX="161.0" layoutY="379.0" mnemonicParsing="false" onAction="#restartGame" prefHeight="25.0" prefWidth="129.0" text="Zagraj ponownie!" />
+   </children>
+</AnchorPane>

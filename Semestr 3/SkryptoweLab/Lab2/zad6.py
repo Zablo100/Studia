@@ -1,0 +1,10 @@
+s1 = set([1,2,3,4])
+s2 = set([3,4,5,6])
+
+print()
+print(f"Zawartość obu setów (nie powtarzając danych) {s1.union(s2)}")
+print(f"Wspólne dane z obu setów {s1.intersection(s2)}")
+print(f"Zawartość s1 bez zawartości s2 {s1.difference(s2)}")
+print(f"Zawartość s2 bez zawartości s1 {s2.difference(s1)}")
+print(f"Zawartość obu bez danych które się powtarzając {s1.symmetric_difference(s2)}")
+print()
