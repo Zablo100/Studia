@@ -2,3 +2,4 @@
 *.h linguist-detectable=false
 *.d linguist-detectable=false
 *.s linguist-detectable=false
+*.mk linguist-detectable=false
