@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zablo\\source\\repos\\PSW1\\PSW1\\PSW1.csproj",
+      "projectUniqueName": "C:\\Users\\Zablo\\OneDrive\\Pulpit\\Studia\\Git\\Studia\\Semestr 4\\PSW\\PSW1\\PSW1\\PSW1.csproj",
       "projectName": "PSW1",
-      "projectPath": "C:\\Users\\Zablo\\source\\repos\\PSW1\\PSW1\\PSW1.csproj",
+      "projectPath": "C:\\Users\\Zablo\\OneDrive\\Pulpit\\Studia\\Git\\Studia\\Semestr 4\\PSW\\PSW1\\PSW1\\PSW1.csproj",
       "packagesPath": "C:\\Users\\Zablo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Zablo\\source\\repos\\PSW1\\PSW1\\obj\\",
+      "outputPath": "C:\\Users\\Zablo\\OneDrive\\Pulpit\\Studia\\Git\\Studia\\Semestr 4\\PSW\\PSW1\\PSW1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Zablo\\AppData\\Roaming\\NuGet\\NuGet.Config",

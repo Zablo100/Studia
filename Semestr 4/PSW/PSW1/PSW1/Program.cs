@@ -3,10 +3,10 @@ void zad1()
 {
     Random random = new Random();
     int userInput, randomNumber;
+    randomNumber = random.Next(0, 10);
 
     do
     {
-        randomNumber = random.Next(0, 10);
         Console.Write("Wpisz liczbe: ");
         userInput = Convert.ToInt32(Console.ReadLine());
         if (userInput < randomNumber)
@@ -25,21 +25,24 @@ void zad1()
 
 void zad2()
 {
-    int x;
     HashSet<int> set = new HashSet<int>();
-    Console.Write("Wpisz ile liczb: ");
-    x = Convert.ToInt32(Console.ReadLine());
-    for(int i = 0; i < x; i++)
-    {
-        set.Add(Convert.ToInt32(Console.ReadLine()));
-    }
+    Console.Write("Wpisz wartości: ");
+    String[] tab = Console.ReadLine().Split(" ");
 
-    Console.WriteLine($"Liczba unikalnych wartości {set.Count()}");
+    foreach (String s in tab)
+    {
+        if(int.TryParse(s, out int number))
+        {
+            set.Add(number);
+        }
+    }
+    Console.WriteLine($"Liczba unikalnych wartości: {set.Count()}");
+    
 }
 
-void zad3()
+void zad3(String binarna)
 {
-    String binarna = "010";
+    Console.WriteLine(binarna);
     bool jedynka = false;
     bool zero = false;
     int liczbaDziur = 0;
@@ -72,10 +75,17 @@ void zad4()
     suma.AddRange(zbior1);
     suma.AddRange(zbior2);
 
-    suma.ForEach(e => Console.Write("{0} ", e));
+    Console.Write("Zbiór A: ");
+    zbior1.ForEach(e => Console.Write($"{e} "));
+    Console.WriteLine("");
+    Console.Write("Zbiór B: ");
+    zbior2.ForEach(e => Console.Write($"{e} "));
+    Console.WriteLine("");
+    Console.Write("Suma: ");
+    suma.Distinct().ToList().ForEach(e => Console.Write($"{e} "));
 
     Console.WriteLine("");
-    Console.WriteLine("Różnica zbiorów A/B");
+    Console.Write("Różnica zbiorów A-B: ");
     foreach (int x in zbior1)
     {
         if (!zbior2.Contains(x))
@@ -84,17 +94,17 @@ void zad4()
         }
     }
     Console.WriteLine("");
-    Console.WriteLine("Cześć wspólna");
+    Console.Write("Cześć wspólna: ");
     foreach (int x in zbior1)
     {
         if (zbior2.Contains(x))
         {
-            Console.WriteLine($"{x} ");
+            Console.Write($"{x} ");
         }
     }
 
     Console.WriteLine("");
-    Console.WriteLine("Różnica symetryczna zbiorów");
+    Console.Write("Różnica symetryczna zbiorów: ");
     foreach(int x in suma)
     {
         if (!zbior1.Contains(x) || !zbior2.Contains(x))
@@ -103,24 +113,24 @@ void zad4()
         }
     }
 
-
+    Console.WriteLine("");
 }
 
 void zad5()
 {
     Console.Write("Wpisz liczbe: ");
     int x = Convert.ToInt32(Console.ReadLine());
-    int a = 0;
+    int dzielniki = 0;
 
     for (int i=1; i <=x; i++)
     {
         if (x % i == 0)
         {
-            a++;
+            dzielniki++;
         }
     }
 
-    if (a == 2)
+    if (dzielniki == 2)
     {
         Console.WriteLine($"{x} to liczba pierwsza");
     }
@@ -129,3 +139,5 @@ void zad5()
         Console.WriteLine($"{x} to nie jest liczba pierwsza");
     }
 }
+
+zad5();
