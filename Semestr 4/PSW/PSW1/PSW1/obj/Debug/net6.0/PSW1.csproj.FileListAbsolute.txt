@@ -1,0 +1,15 @@
+C:\Users\Zablo\source\repos\PSW1\PSW1\bin\Debug\net6.0\PSW1.exe
+C:\Users\Zablo\source\repos\PSW1\PSW1\bin\Debug\net6.0\PSW1.deps.json
+C:\Users\Zablo\source\repos\PSW1\PSW1\bin\Debug\net6.0\PSW1.runtimeconfig.json
+C:\Users\Zablo\source\repos\PSW1\PSW1\bin\Debug\net6.0\PSW1.dll
+C:\Users\Zablo\source\repos\PSW1\PSW1\bin\Debug\net6.0\PSW1.pdb
+C:\Users\Zablo\source\repos\PSW1\PSW1\obj\Debug\net6.0\PSW1.csproj.AssemblyReference.cache
+C:\Users\Zablo\source\repos\PSW1\PSW1\obj\Debug\net6.0\PSW1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Zablo\source\repos\PSW1\PSW1\obj\Debug\net6.0\PSW1.AssemblyInfoInputs.cache
+C:\Users\Zablo\source\repos\PSW1\PSW1\obj\Debug\net6.0\PSW1.AssemblyInfo.cs
+C:\Users\Zablo\source\repos\PSW1\PSW1\obj\Debug\net6.0\PSW1.csproj.CoreCompileInputs.cache
+C:\Users\Zablo\source\repos\PSW1\PSW1\obj\Debug\net6.0\PSW1.dll
+C:\Users\Zablo\source\repos\PSW1\PSW1\obj\Debug\net6.0\refint\PSW1.dll
+C:\Users\Zablo\source\repos\PSW1\PSW1\obj\Debug\net6.0\PSW1.pdb
+C:\Users\Zablo\source\repos\PSW1\PSW1\obj\Debug\net6.0\PSW1.genruntimeconfig.cache
+C:\Users\Zablo\source\repos\PSW1\PSW1\obj\Debug\net6.0\ref\PSW1.dll
