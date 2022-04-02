@@ -1,6 +1,41 @@
 ﻿
 void zad1()
 {
+    Console.Write("Wpisz wartości: ");
+    String[] tab = Console.ReadLine().Split(" ");
+    int[] tablica = new int[tab.Length];
+
+    for (int i = 0; i < tab.Length; i++)
+    {
+        tablica[i] = int.Parse(tab[i]);
+    }
+
+    int n = tablica.Length;
+    do
+    {
+        for (int i = 0; i < n - 1; i++)
+        {
+            if (tablica[i] > tablica[i + 1])
+            {
+                int tmp = tablica[i];
+                tablica[i] = tablica[i + 1];
+                tablica[i + 1] = tmp;
+            }
+        }
+        n--;
+    }
+    while (n > 1);
+
+    Console.Write("Tablica po sortowaniu: ");
+    foreach (int i in tablica)
+    {
+        Console.Write($"{i} ");
+    }
+
+}
+
+void zad2()
+{
     List<double> list = new List<double>() { 2,3,3.5,4,4.5,5};
 
     Console.Write("Wpisz rozmiar tablicy: ");
@@ -45,7 +80,7 @@ void zad1()
     Console.WriteLine($"Odchylenie standardowe: {sd}");
 
 }
-void zad2()
+void zad3()
 {
     Console.Write("Wpisz wymiar macierzy: ");
     int size = Convert.ToInt32(Console.ReadLine());
@@ -117,4 +152,4 @@ void show(int[,] m, int size, string message)
     }
 }
 
-zad2();
+zad1();
