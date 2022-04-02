@@ -1,4 +1,5 @@
-﻿
+﻿using System.Collections.Generic;
+
 void zad1()
 {
     Console.Write("Wpisz wartości: ");
@@ -74,6 +75,29 @@ void zad2()
         }
     }
     Console.WriteLine(" ");
+
+    Dictionary<double, int> wys = new Dictionary<double, int>();
+    foreach (double i in tab)
+    {
+        if (wys.ContainsKey(i))
+        {
+            wys[i]++;
+        }
+        else
+        {
+            wys.Add(i, 1);
+        }
+    }
+
+    Console.WriteLine(" ");
+    foreach (KeyValuePair<double, int> i in wys)
+    {
+        Console.WriteLine($"{i.Key} występuje {i.Value}");
+    }
+
+
+
+
 
     double sum = tab.Select(x => (x - average) * (x - average)).Sum();
     double sd = Math.Sqrt(sum/tab.Length);
@@ -152,4 +176,4 @@ void show(int[,] m, int size, string message)
     }
 }
 
-zad1();
+zad3();
