@@ -34,9 +34,10 @@ import javax.swing.UIManager;
 
 public class MainFrame {
 
+
     private JFrame frame;
     // ścieżka do katalogu z plikami tekstowymi
-    private static final String DIR_PATH = "C:\\Users\\Zablo\\Documents\\Studia\\Semestr 4\\ZPO\\Lab1";
+    private static final String DIR_PATH = "C:\\Users\\Zablo\\OneDrive\\Pulpit\\Studia\\Semestr 3";
     // określa ile najczęściej występujących wyrazów bierzemy pod uwagę
     private final int liczbaWyrazowStatystyki;
     private final AtomicBoolean fajrant;
@@ -160,20 +161,14 @@ public class MainFrame {
                                     Optional<Path> filePath = Optional.of(file.toRealPath());
                                     //put into queue
                                     try {
-
                                         kolejka.put(filePath);
-
                                     } catch (InterruptedException e) {
                                         e.printStackTrace();
                                         //Thread.currentThread().interrupt();
                                     }
                                 }
-
-
                                 return FileVisitResult.CONTINUE;
                             }
-
-
                         });
 
 
@@ -207,7 +202,6 @@ public class MainFrame {
                 // lub oczekiwanie jeśli kolejka jest pusta
                     Optional<Path> filePath = kolejka.take();
                     if (filePath.isPresent()) {
-
                         //  wyświetlanie statystyk
                         try {
                             System.out.println(getLinkedCountedWords(filePath.get(), 15));
@@ -246,24 +240,13 @@ public class MainFrame {
         //konstrukcja 'try-with-resources' - z automatycznym zamykaniem strumienia/źródła danych
         try (BufferedReader reader = Files.newBufferedReader(path)) {// wersja ze wskazaniem kodowania
             // Files.newBufferedReader(path, StandardCharsets.UTF_8)
-            return reader.lines() // można też bez buforowania - Files.readAllLines(path)
-                    //TODO
-                    // 1. podział linii na słowa, można skorzystać z wyrażeń regularnych np. "\\s+"
+            return reader.lines()
                     .flatMap(line -> Arrays.stream(line.split(" ")))
-                    // 2. filtrowanie słów - tylko z przynajmniej trzema znakami, użyj wyrażenia
                     .filter(word -> word.matches("[a-zA-Z]{3,}"))
-                    // regularnego np. "[a-zA-Z]{3,}" (nie uwzględnia polskich znaków)
-                    // 3. konwersja do małych liter, aby porównywanie słów było niewrażliwe na wielkość liter
                     .map(String::toLowerCase)
-                    // 4. grupowanie słów względem liczebności ich występowania, można użyć
                     .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
-                    // metody collect z Collectors.groupingBy(Function.identity(), Collectors.counting()),
-                    // po tej operacji należy zrobić konwersję na strumień tj. entrySet().stream()
-                    // 5. sortowanie względem przechowywanych w mapie wartości, w kolejności malejącej,
                     .entrySet().stream()
                     .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                    // można użyć Map.Entry.comparingByValue(Comparator.reverseOrder())
-                    // 6. ograniczenie liczby słów do wartości z wordsLimit
                     .limit(wordsLimit)
                     .collect(Collectors.toMap( //umieszczenie elementów strumienia w mapie zachowującej kolejność tj. LinkedHashMap
                             Map.Entry::getKey,
