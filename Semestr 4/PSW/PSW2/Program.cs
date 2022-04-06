@@ -1,5 +1,41 @@
-﻿
+﻿using System.Collections.Generic;
+
 void zad1()
+{
+    Console.Write("Wpisz wartości: ");
+    String[] tab = Console.ReadLine().Split(" ");
+    int[] tablica = new int[tab.Length];
+
+    for (int i = 0; i < tab.Length; i++)
+    {
+        tablica[i] = int.Parse(tab[i]);
+    }
+
+    int n = tablica.Length;
+    do
+    {
+        for (int i = 0; i < n - 1; i++)
+        {
+            if (tablica[i] > tablica[i + 1])
+            {
+                int tmp = tablica[i];
+                tablica[i] = tablica[i + 1];
+                tablica[i + 1] = tmp;
+            }
+        }
+        n--;
+    }
+    while (n > 1);
+
+    Console.Write("Tablica po sortowaniu: ");
+    foreach (int i in tablica)
+    {
+        Console.Write($"{i} ");
+    }
+
+}
+
+void zad2()
 {
     List<double> list = new List<double>() { 2,3,3.5,4,4.5,5};
 
@@ -40,12 +76,35 @@ void zad1()
     }
     Console.WriteLine(" ");
 
+    Dictionary<double, int> wys = new Dictionary<double, int>();
+    foreach (double i in tab)
+    {
+        if (wys.ContainsKey(i))
+        {
+            wys[i]++;
+        }
+        else
+        {
+            wys.Add(i, 1);
+        }
+    }
+
+    Console.WriteLine(" ");
+    foreach (KeyValuePair<double, int> i in wys)
+    {
+        Console.WriteLine($"{i.Key} występuje {i.Value}");
+    }
+
+
+
+
+
     double sum = tab.Select(x => (x - average) * (x - average)).Sum();
     double sd = Math.Sqrt(sum/tab.Length);
     Console.WriteLine($"Odchylenie standardowe: {sd}");
 
 }
-void zad2()
+void zad3()
 {
     Console.Write("Wpisz wymiar macierzy: ");
     int size = Convert.ToInt32(Console.ReadLine());
@@ -117,4 +176,4 @@ void show(int[,] m, int size, string message)
     }
 }
 
-zad2();
+zad3();
