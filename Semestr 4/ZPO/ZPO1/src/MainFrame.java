@@ -37,7 +37,7 @@ public class MainFrame {
 
     private JFrame frame;
     // ścieżka do katalogu z plikami tekstowymi
-    private static final String DIR_PATH = "C:\\Users\\Zablo\\OneDrive\\Pulpit\\Studia\\Semestr 3";
+    private static final String DIR_PATH = "C:\\Users\\Zablo\\OneDrive\\Pulpit\\Studia\\Semestr 3\\BazaDanych";
     // określa ile najczęściej występujących wyrazów bierzemy pod uwagę
     private final int liczbaWyrazowStatystyki;
     private final AtomicBoolean fajrant;
