@@ -3,6 +3,7 @@ using PSW4.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -59,12 +60,25 @@ namespace PSW4
             }
             return false;
         }
+        private bool isEmailValid(string email)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(email);
+
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
 
         private bool RegisterCheck()
         {
             bool isUserValid = false;
             
-            if(passwordCheck() && !isLoginAlreadyTaken() && !isEmailAlreadyTaken())
+            if(passwordCheck() && !isLoginAlreadyTaken() && !isEmailAlreadyTaken() && isEmailValid(userEmail.Text))
             {
                 isUserValid = true;
             }

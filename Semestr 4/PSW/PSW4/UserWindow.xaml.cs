@@ -73,7 +73,7 @@ namespace PSW4
             EventModel eventModel = eventListUI.SelectedItem as EventModel;
             if (!eventDAO.isUserAlreadySignUp(user, eventModel))
             {
-                eventDAO.SignedUpForEvent(user, eventModel);
+                eventDAO.SignedUpForEvent(user, eventModel, participationTypeUI.SelectedIndex, FoodTypUI.SelectedIndex);
             }
             
         }

@@ -10,7 +10,7 @@ namespace PSW4.Services
 {
     public class UserDAO : IUserDataService
     {
-        string connectionString = "Server=localhost;Port=3305;Database=psw4;Uid=root;Pwd=123";
+        string connectionString = "Server=localhost;Port=3306;Database=psw4;Uid=root;Pwd=123";
         public bool findUserByLoginAndPassword(UserModel user)
         {
             bool loginSucces = false;
@@ -156,6 +156,41 @@ namespace PSW4.Services
             }
             return new UserModel();
         }
+        public UserModel getUserInfoById(int id)
+        {
+            string sqlQuery = "SELECT * FROM psw4.Users WHERE Id = @id";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                UserModel userInfo;
+                MySqlCommand cmd = new MySqlCommand(sqlQuery, connection);
+                cmd.Parameters.AddWithValue("@id", id);
+                try
+                {
+                    connection.Open();
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    reader.Read();
+                    UserModel fullUserInfo = new UserModel(
+                        (int)reader[0],
+                        (string)reader[1],
+                        (string)reader[2],
+                        (string)reader[3],
+                        (string)reader[4],
+                        (string)reader[5],
+                        (UserModel.Role)reader[6],
+                        (DateTime)reader[7]);
+                    userInfo = fullUserInfo;
+                    return userInfo;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+            }
+            return new UserModel();
+        }
+        
         public List<UserModel> getAllUsers()
         {
             List<UserModel> users = new List<UserModel>();

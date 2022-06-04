@@ -22,12 +22,19 @@ namespace PSW4
     public partial class AdminWindow : Window
     {
         UserDAO userDAO = new UserDAO();
+        EventDAO eventDAO = new EventDAO();
         List<UserModel> users = new List<UserModel>();
+        List<EventModel> events = new List<EventModel>();
+        List<EventAttendeeModel> eventAttendees = new List<EventAttendeeModel>();
         UserModel selectedUser;
+        int selectedEvent = 0;
+        bool isLoaded = false;
+        int userId;
         public AdminWindow()
         {
             InitializeComponent();
             loadUsers();
+            loadEvents();
         }
 
         private void loadUsers()
@@ -36,6 +43,12 @@ namespace PSW4
             UsersView.ItemsSource = users;
         }
 
+        private void loadEvents()
+        {
+            events = eventDAO.getAllEvents();
+            eventListUI.ItemsSource = events;
+            EventsList.ItemsSource = events;
+        }
 
         private void windowFrame_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -89,11 +102,13 @@ namespace PSW4
         {
             Window window = new ChangePasswordWindow(selectedUser);
             window.Show();
+            loadUsers();
         }
 
         private void DeletUserBtn_Click(object sender, RoutedEventArgs e)
         {
             userDAO.deleteUserById(selectedUser);
+            loadUsers();
         }
 
         private void RefreshData_Click(object sender, RoutedEventArgs e)
@@ -108,6 +123,86 @@ namespace PSW4
             ChangeRoleBtn.IsEnabled = true;
             ShowUserEventsBtn.IsEnabled = true;
             RefreshData.IsEnabled = true;
+        }
+
+        private void eventListUI_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                selectedEvent = eventListUI.SelectedIndex;
+                getEventAttendees(events[selectedEvent], 0);
+                isLoaded = true;
+                eventStatusUI.IsEnabled = true;
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void getEventAttendees(EventModel eventInfo, int status)
+        {
+            eventAttendees = eventDAO.getEventAttendees(eventInfo, status);
+            EventUsersList.ItemsSource = eventAttendees;
+        }
+
+        private void AcceptUser_Click(object sender, RoutedEventArgs e)
+        {
+            eventDAO.changeStatus(userId, selectedEvent+1, 1);
+        }
+
+        private void RejectUser_Click(object sender, RoutedEventArgs e)
+        {
+            eventDAO.changeStatus(userId, selectedEvent+1 , 2);
+        }
+
+        private void eventStatusUI_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (isLoaded)
+            {
+                getEventAttendees(events[selectedEvent], eventStatusUI.SelectedIndex);
+            }
+        }
+
+        private void EventUsersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                int index = EventUsersList.SelectedIndex;
+                userId = eventAttendees[index].userId;
+                AcceptUser.IsEnabled = true;
+                RejectUser.IsEnabled = true;
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void createEvent_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = new NewEventWindow();
+            window.Show();
+        }
+
+        private void editeEvent_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = new EditEventWindow(selectedEvent);
+            window.Show();
+            loadEvents();
+        }
+
+        private void deleteEvent_Click(object sender, RoutedEventArgs e)
+        {
+            eventDAO.deleteEvent(selectedEvent);
+        }
+
+        private void EventsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            deleteEvent.IsEnabled = true;
+            editeEvent.IsEnabled = true;
+
+            selectedEvent = EventsList.SelectedIndex + 1;
         }
     }
 }

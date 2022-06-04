@@ -118,7 +118,7 @@
             Margin="0,10,0,0"
             VerticalAlignment="Center"/>
         <ComboBox
-            x:Name="role"
+            x:Name="participationTypeUI"
             Grid.Row="5"
             Grid.Column="1"
             Width="150"
@@ -140,6 +140,7 @@
                 />
         </ComboBox>
         <ComboBox
+            x:Name="FoodTypUI"
             Grid.Row="5"
             Grid.Column="1"
             Width="150"

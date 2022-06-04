@@ -10,7 +10,7 @@ namespace PSW4.Services
     public interface IEventDataService
     {
         List<EventModel> getAllEvents();
-        public void SignedUpForEvent(UserModel user, EventModel eventModel);
+        public void SignedUpForEvent(UserModel user, EventModel eventModel, int type, int foodType);
         public bool isUserAlreadySignUp(UserModel user, EventModel eventModel);
     }
 }

@@ -23,7 +23,7 @@ namespace PSW4
     public partial class MainWindow : Window
     {
         string password;
-        int loginAttempts = 3;
+        int loginAttempts = 1;
         Services.UserDAO userDAO = new Services.UserDAO();
         public MainWindow()
         {
@@ -116,8 +116,8 @@ namespace PSW4
         private void loginAttempt()
         {
             loginFaild.Text = $"Logowanie nieudane! ({loginAttempts}/3)";
-            loginAttempts--;
-            if (loginAttempts < 0)
+            loginAttempts++;
+            if (loginAttempts > 3)
             {
                 LoginButton.IsEnabled = false;
                 loginFaild.Text = "Zbyt duże ilość nieudanych prób logowania";

@@ -20,6 +20,13 @@ namespace PSW4.Models
             this.Agenda = Agenda;
             this.EventDate = EventDate;
         }
+        public EventModel(string Name, string Agenda, DateTime EventDate)
+        {
+            this.Id = Id;
+            this.Name = Name;
+            this.Agenda = Agenda;
+            this.EventDate = EventDate;
+        }
 
 
         public override string ToString()
