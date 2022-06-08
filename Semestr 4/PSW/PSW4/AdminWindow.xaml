@@ -83,14 +83,7 @@
                         Grid.Column="3"
                         Grid.Row="4"
                         IsEnabled="False"/>
-                    <Button
-                        x:Name="ShowUserEventsBtn"
-                        Content="Wydarzenia"
-                        Width="100"
-                        Height="30"
-                        Grid.Column="3"
-                        Grid.Row="5"
-                        IsEnabled="False"/>
+
                     <DataGrid
                         x:Name="UsersView"
                         Grid.Row="1"

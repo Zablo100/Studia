@@ -70,6 +70,8 @@ namespace PSW4
             }
             catch (FormatException)
             {
+                RegisterFaild.Text = "Adres email jest niepoprawny!";
+                RegisterFaild.Visibility = Visibility.Visible;
                 return false;
             }
         }

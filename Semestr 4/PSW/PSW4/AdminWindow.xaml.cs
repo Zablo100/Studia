@@ -121,7 +121,6 @@ namespace PSW4
             ChangePasswordBtn.IsEnabled = true;
             DeletUserBtn.IsEnabled = true;
             ChangeRoleBtn.IsEnabled = true;
-            ShowUserEventsBtn.IsEnabled = true;
             RefreshData.IsEnabled = true;
         }
 
@@ -187,7 +186,7 @@ namespace PSW4
 
         private void editeEvent_Click(object sender, RoutedEventArgs e)
         {
-            Window window = new EditEventWindow(selectedEvent);
+            Window window = new EditEventWindow(events[selectedEvent].Id);
             window.Show();
             loadEvents();
         }
@@ -202,7 +201,7 @@ namespace PSW4
             deleteEvent.IsEnabled = true;
             editeEvent.IsEnabled = true;
 
-            selectedEvent = EventsList.SelectedIndex + 1;
+            selectedEvent = EventsList.SelectedIndex;
         }
     }
 }

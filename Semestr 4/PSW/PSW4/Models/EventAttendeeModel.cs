@@ -11,10 +11,11 @@ namespace PSW4.Models
         public int userId { get; private set; }
         public String Login { get; private set; }
         public String Email { get; private set; }
-        public String Name { get; private set; }
-        public AttendantStatus attendantStatus { get; private set; }
-        public participationType participationType { get; private set; }
-        public foodType foodType { get; private set; }
+        public String Imie { get; private set; }
+        public String Nazwisko { get; private set; }
+        public AttendantStatus Status { get; private set; }
+        public participationType Uczestnictwo { get; private set; }
+        public foodType Wyżywienie { get; private set; }
          
         
         public EventAttendeeModel(UserModel user, int type, int food, int status)
@@ -22,10 +23,11 @@ namespace PSW4.Models
             userId = user.Id;
             Login = user.Login;
             Email = user.Email;
-            Name = user.Name;
-            attendantStatus = (AttendantStatus)status;
-            participationType = (participationType)type;
-            foodType = (foodType)food;
+            Imie = user.Name;
+            Nazwisko = user.Surname;
+            Status = (AttendantStatus)status;
+            Uczestnictwo = (participationType)type;
+            Wyżywienie = (foodType)food;
         }
         
         

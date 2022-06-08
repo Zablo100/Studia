@@ -44,8 +44,8 @@ namespace PSW4.Models
             this.RegisterDate = RegisterDate;
             Permission = Role.user;
         }
-        public UserModel(int Id,string Login, string Password, string Name,
-                        string Surname, string Email, Role Permission, DateTime RegisterDate)
+        public UserModel(int Id,string Login, string Password, string Email,
+                        string Name, string Surname, Role Permission, DateTime RegisterDate)
         {
             this.Id = Id;
             this.Login = Login;
