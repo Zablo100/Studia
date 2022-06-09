@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.ProjectController">
+   <children>
+      <Button layoutX="181.0" layoutY="21.0" mnemonicParsing="false" text="Szukaj" />
+      <TableView fx:id="tblProjekt" layoutX="4.0" layoutY="105.0" prefHeight="290.0" prefWidth="589.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="57.0" text="Id" />
+          <TableColumn fx:id="colNazwa" prefWidth="97.0" text="Nazwa" />
+            <TableColumn fx:id="colOpis" prefWidth="149.0" text="Opis" />
+            <TableColumn fx:id="colDataCzasUtworzenia" prefWidth="135.0" text="Data utworzenia" />
+            <TableColumn fx:id="colDataOddania" prefWidth="146.0" text="Data oddania" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtSzukaj" layoutX="14.0" layoutY="21.0" />
+      <Label layoutX="300.0" layoutY="25.0" text="Rozmiar strony" />
+      <ChoiceBox fx:id="cbPageSizes" layoutX="386.0" layoutY="21.0" prefHeight="25.0" prefWidth="41.0" />
+      <Button layoutX="503.0" layoutY="21.0" mnemonicParsing="false" text="Dodaj" />
+      <Button layoutX="440.0" layoutY="65.0" mnemonicParsing="false" text="&gt;" />
+      <Button layoutX="472.0" layoutY="65.0" mnemonicParsing="false" text="&gt; |" />
+      <Button layoutX="69.0" layoutY="65.0" mnemonicParsing="false" text="&lt;" />
+      <Button layoutX="25.0" layoutY="65.0" mnemonicParsing="false" text="| &lt;" />
+   </children>
+</AnchorPane>
