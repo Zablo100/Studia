@@ -24,5 +24,25 @@ namespace PSW5.Controllers
                 return View("LogInFail", userModel);
             }
         }
+
+        public IActionResult Register()
+        {
+            return View("Register");
+        }
+
+        public IActionResult RegisterUser(UserModel user)
+        {
+            SecurityLoginService securityCheck = new SecurityLoginService();
+
+            if (securityCheck.createNewUser(user))
+            {
+                return RedirectToAction("Index", "Login");
+            }
+            else
+            {
+                return View("RegisterFail");
+            }
+        }
+
     }
 }

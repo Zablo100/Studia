@@ -15,5 +15,19 @@ namespace PSW5.Services
         {
             return userDAO.findUserByLogin(user);
         }
+        public bool isEmailValid(string emial)
+        {
+            return userDAO.checkEmail(emial);
+        }
+
+        public bool createNewUser(UserModel user)
+        {
+            if (!isValid(user) && isEmailValid(user.email))
+            {
+                userDAO.createUser(user);
+                return true;
+            }
+            return false;
+        }
     }
 }
