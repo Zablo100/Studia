@@ -28,7 +28,7 @@ public class Zadanie {
     @Column(length = 1000)
     private String opis;
 
-    @Column(nullable = false)
+
     private LocalDateTime dataczas_dodania;
 
     public Projekt getProjekt() {
