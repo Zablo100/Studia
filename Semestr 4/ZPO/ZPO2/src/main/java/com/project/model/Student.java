@@ -4,38 +4,54 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "student")
+@Table(name="student")
 public class Student {
 
     @Id
     @GeneratedValue
-    @Column(name = "student_id")
-    private Integer studentId;
+    @Column(name="student_id")
+    private Integer student_id;
 
-    @Column(nullable = false, length = 50)
+    @Column(name="imie")
     private String imie;
 
-    @Column(nullable = false, length = 100)
+    @Column(name="nazwisko")
     private String nazwisko;
 
-    @Column(name = "nr_indeksu",nullable = false, length = 20, unique = true)
+    @Column(name="nr_indeksu")
     private String nrIndeksu;
 
-    @Column(length = 50)
+    @Column(name="email")
     private String email;
 
-    @Column(nullable = false)
-    private boolean stacjonarny;
+    @Column(name="stacjonarny")
+    private Boolean stacjonarny;
 
     @ManyToMany(mappedBy = "studenci")
     private Set<Projekt> projekty;
 
-    public Integer getStudentId() {
-        return studentId;
+
+    public Student() {
+    }
+    public Student(String imie, String nazwisko, String nrIndeksu, Boolean stacjonarny) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.nrIndeksu = nrIndeksu;
+    }
+    public Student(String imie, String nazwisko, String nrIndeksu, String email, Boolean stacjonarny) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.nrIndeksu = nrIndeksu;
+        this.email = email;
+        this.stacjonarny = stacjonarny;
     }
 
-    public void setStudentId(Integer studentId) {
-        this.studentId = studentId;
+    public Integer getStudent_id() {
+        return student_id;
+    }
+
+    public void setStudent_id(Integer student_id) {
+        this.student_id = student_id;
     }
 
     public String getImie() {
@@ -70,11 +86,11 @@ public class Student {
         this.email = email;
     }
 
-    public boolean isStacjonarny() {
+    public Boolean getStacjonarny() {
         return stacjonarny;
     }
 
-    public void setStacjonarny(boolean stacjonarny) {
+    public void setStacjonarny(Boolean stacjonarny) {
         this.stacjonarny = stacjonarny;
     }
 
@@ -85,23 +101,4 @@ public class Student {
     public void setProjekty(Set<Projekt> projekty) {
         this.projekty = projekty;
     }
-
-    public Student() {
-    }
-
-    public Student(String imie, String nazwisko, String nrIndeksu, Boolean stacjonarny) {
-        this.imie = imie;
-        this.nazwisko = nazwisko;
-        this.nrIndeksu = nrIndeksu;
-        this.stacjonarny = stacjonarny;
-    }
-
-    public Student(String imie, String nazwisko, String nrIndeksu, String email, Boolean stacjonarny) {
-        this.imie = imie;
-        this.nazwisko = nazwisko;
-        this.nrIndeksu = nrIndeksu;
-        this.email = email;
-        this.stacjonarny = stacjonarny;
-    }
-
 }

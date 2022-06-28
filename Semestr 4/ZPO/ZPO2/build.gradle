@@ -2,7 +2,11 @@ plugins {
     id 'java'
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.10'
-    id 'org.beryx.jlink' version '2.24.1'
+    id 'org.beryx.jlink' version '2.24.2'
+
+}
+ext {
+    junitVersion = '5.8.2'
 }
 
 group 'com.project'
@@ -10,11 +14,20 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    mavenLocal()
+}
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+    implementation group: 'org.hsqldb', name: 'hsqldb', version: '2.5.0'
+    implementation 'org.mariadb.jdbc:mariadb-java-client:2.1.2'
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.13.Final'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
+
 }
 
-ext {
-    junitVersion = '5.8.2'
-}
 
 sourceCompatibility = '17'
 targetCompatibility = '17'
@@ -33,19 +46,6 @@ javafx {
     modules = ['javafx.controls', 'javafx.fxml']
 }
 
-dependencies {
-
-    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
-    implementation 'org.mariadb.jdbc:mariadb-java-client:2.1.2'
-    implementation group: 'org.hsqldb', name: 'hsqldb', version: '2.5.0'
-    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.13.Final'
-    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
-    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
-    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
-    implementation 'org.openjfx:javafx:19-ea+7'
-
-}
 
 test {
     useJUnitPlatform()

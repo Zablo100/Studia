@@ -1,41 +1,49 @@
 package com.project.model;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
-import java.security.Timestamp;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "zadanie")
+@Table(name="zadanie")
 public class Zadanie {
-
-    @ManyToOne
-    @JoinColumn(name = "projekt_id")
-    private Projekt projekt;
 
     @Id
     @GeneratedValue
-    @Column(name = "zadanie_id")
-    private Integer zadanieId;
+    @Column(name="zadanie_id")
+    public Integer zadanieId;
 
-    @Column(nullable = false, length = 50)
-    private String nazwa;
+    @ManyToOne
+    @JoinColumn(name="projekt_id")
+    private Projekt projekt;
 
-    @Column
-    private Integer kolejnosc;
+    @Column(name="nazwa", nullable=false)
+    public String nazwa;
 
-    @Column(length = 1000)
+
+    @Column(name="kolejnosc")
+    public Integer kolejnosc;
+
+    @Column(name="opis")
     private String opis;
 
-    @Column(nullable = false)
-    private LocalDateTime dataczas_dodania;
+    @CreationTimestamp
+    @Column(name="dataczas_dodania", nullable=false, updatable=false)
+    public LocalDateTime dataCzasDodania;
 
-    public Projekt getProjekt() {
-        return projekt;
+
+
+    public Zadanie(){
+
+    }
+    public Zadanie(String nazwa, String opis, Integer kolejnosc){
+        this.nazwa = nazwa;
+        this.opis = opis;
+        this.kolejnosc = kolejnosc;
+
     }
 
-    public void setProjekt(Projekt projekt) {
-        this.projekt = projekt;
-    }
 
     public Integer getZadanieId() {
         return zadanieId;
@@ -43,6 +51,14 @@ public class Zadanie {
 
     public void setZadanieId(Integer zadanieId) {
         this.zadanieId = zadanieId;
+    }
+
+    public Projekt getProjekt() {
+        return projekt;
+    }
+
+    public void setProjekt(Projekt projekt) {
+        this.projekt = projekt;
     }
 
     public String getNazwa() {
@@ -69,20 +85,13 @@ public class Zadanie {
         this.opis = opis;
     }
 
-    public LocalDateTime getDataczas_dodania() {
-        return dataczas_dodania;
+    public LocalDateTime getDataCzasDodania() {
+        return dataCzasDodania;
     }
 
-    public void setDataczas_dodania(LocalDateTime dataczas_dodania) {
-        this.dataczas_dodania = dataczas_dodania;
+    public void setDataCzasDodania(LocalDateTime dataCzasDodania) {
+        this.dataCzasDodania = dataCzasDodania;
     }
 
-    public Zadanie(){
 
-    }
-    public Zadanie(String nazwa, Integer kolejnosc, String opis) {
-        this.nazwa = nazwa;
-        this.kolejnosc = kolejnosc;
-        this.opis = opis;
-    }
 }

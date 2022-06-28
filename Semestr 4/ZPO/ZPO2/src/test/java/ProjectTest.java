@@ -1,5 +1,3 @@
-package resources.test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import java.io.FileNotFoundException;
@@ -50,8 +48,8 @@ public class ProjectTest {
     @Order(1)
     public void dodawanieProjektuZZadaniami() {
         Projekt projekt = new Projekt("Aplikacji webowa", "Aplikacja w Javie", LocalDate.of(2020, 6, 19));
-        Zadanie zadanie1 = new Zadanie("Instalacja kontenera serwletów", 1, "Instalacja serwera Tomcat 9.0.33");
-        Zadanie zadanie2 = new Zadanie("Implementacja aplikacji", 2, "Zgodna z wzorcem MVC");
+        Zadanie zadanie1 = new Zadanie("Instalacja kontenera serwletów", "Instalacja serwera Tomcat 9.0.33", 1);
+        Zadanie zadanie2 = new Zadanie("Implementacja aplikacji", "Zgodna z wzorcem MVC", 2);
         //przypisujemy do zadań projekt
         zadanie1.setProjekt(projekt);
         zadanie2.setProjekt(projekt);
