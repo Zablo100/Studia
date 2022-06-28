@@ -1,0 +1,37 @@
+﻿@model PSW5.Models.UserModel
+
+<head>
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+</head>
+<p class="title">Rejestracja</p>
+<hr />
+<div class="main">
+    <div class="loginFrame">
+        <form asp-action="RegisterUser">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="dataFields">
+                <p class="dataText"> Nazwa użytkownika</p>
+                <input asp-for="login" class="loginInput" autocomplete="off"/>
+            </div>
+            <div class="dataFields">
+                <p class="dataText">Email</p>
+                <input asp-for="email" class="loginInput" autocomplete="off"/>
+            </div>
+            <div class="dataFields">
+                <p class="dataText">Hasło</p>
+                <input asp-for="password" class="loginInput" type="password"/>
+            </div>
+            <div class="dataFields">
+            <div class="dataFields">
+                <p class="dataText">Imię</p>
+                <input asp-for="name" class="loginInput" autocomplete="off"/>
+            </div>
+            <div class="dataFields">
+                <p class="dataText">Nazwisko</p>
+                <input asp-for="lastName" class="loginInput" autocomplete="off"/>
+            </div>
+                <input type="submit" value="Zarejestruj" class="LoginButton" />
+            </div>
+        </form>
+    </div>
+</div>

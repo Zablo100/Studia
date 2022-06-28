@@ -1,43 +1,35 @@
-package com.project.rest.model;
+package webapp.model;
+
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
-import java.security.Timestamp;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "zadanie")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Zadanie {
 
-    @ManyToOne
-    @JoinColumn(name = "projekt_id")
-    private Projekt projekt;
 
-    @Id
-    @GeneratedValue
-    @Column(name = "zadanie_id")
+//    private Projekt projekt;
+
     private Integer zadanieId;
 
-    @Column(nullable = false, length = 50)
     private String nazwa;
 
-    @Column
     private Integer kolejnosc;
 
-    @Column(length = 1000)
     private String opis;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+    public LocalDateTime data_oddania;
 
-    private LocalDateTime dataczas_dodania;
-
-    public Projekt getProjekt() {
-        return projekt;
-    }
-
-    public void setProjekt(Projekt projekt) {
-        this.projekt = projekt;
-    }
+//    public Projekt getProjekt() {
+//        return projekt;
+//    }
+//
+//    public void setProjekt(Projekt projekt) {
+//        this.projekt = projekt;
+//    }
 
     public Integer getZadanieId() {
         return zadanieId;
@@ -71,12 +63,12 @@ public class Zadanie {
         this.opis = opis;
     }
 
-    public LocalDateTime getDataczas_dodania() {
-        return dataczas_dodania;
+    public LocalDateTime getdata_oddania() {
+        return data_oddania;
     }
 
-    public void setDataczas_dodania(LocalDateTime dataczas_dodania) {
-        this.dataczas_dodania = dataczas_dodania;
+    public void setdata_oddania(LocalDateTime data) {
+        this.data_oddania = data;
     }
 
     public Zadanie(){

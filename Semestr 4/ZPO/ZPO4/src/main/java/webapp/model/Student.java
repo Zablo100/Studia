@@ -1,45 +1,36 @@
-package com.project.rest.model;
+package webapp.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.*;
 import java.util.Set;
 
-@Entity
-@Table(name = "student")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Student {
-    @Id
-    @GeneratedValue
-    @Column(name = "student_id")
-    private Integer studentId;
 
 
-    @Column(nullable = false, length = 50)
+
+    public Integer student_id;
+
+
     private String imie;
 
 
-    @Column(nullable = false, length = 100)
     private String nazwisko;
 
-    @Column(name = "nr_indeksu", length = 20)
     private String nrIndeksu;
 
-    @Column(length = 50)
     private String email;
 
-    @Column(nullable = false)
     private boolean stacjonarny;
-
-    @ManyToMany(mappedBy = "studenci")
     @JsonIgnoreProperties({"studenci"})
     private Set<Projekt> projekty;
 
-    public Integer getStudentId() {
-        return studentId;
+    public Integer getstudent_id() {
+        return student_id;
     }
 
     public void setStudentId(Integer studentId) {
-        this.studentId = studentId;
+        this.student_id= studentId;
     }
 
     public String getImie() {
