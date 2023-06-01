@@ -1,0 +1,30 @@
+<app-nav-bar></app-nav-bar>
+
+<div id="main">
+    <div id="content">
+        <form [formGroup]="optionForm" (ngSubmit)="startChart()" autocomplete="off">
+            <div class="frame">
+                <div id="header">Wybierz typ wykresu</div>
+                <div id="chekbox-input">
+
+                    <input type="radio" value="user" class="input" formControlName="type" (change)="changeDatepicketView($event)"><span class="input-text">Użytkownik</span>
+                    <input type="radio" value="pc" class="input" formControlName="type" (change)="changeDatepicketView($event)"><span class="input-text">Komputer</span>
+                    <input type="radio" value="time" class="input" formControlName="type" (change)="changeDatepicketView($event)"><span class="input-text">Czasowy</span><br>
+
+                </div>
+                <div id="datepicker" [hidden]="datepickerUI">
+                    <input type="date" formControlName="start" class="datepicker" min="2022-09-01">
+                    <div id="date-space"></div>
+                    <input type="date" formControlName="end" class="datepicker" min="2022-09-01">
+                </div>
+                <div [hidden]="userInput">
+                    <input type="text" placeholder="Wpisz nazwę użytkownika albo stanowisko" id="search" formControlName="name">
+                </div>
+                <button class="btn-blue-round" id="sned" type="submit">Wygeneruj</button>
+            </div>
+        </form>
+        <div id="chart">
+            <ng-container #chart></ng-container>
+        </div>
+    </div>
+</div>

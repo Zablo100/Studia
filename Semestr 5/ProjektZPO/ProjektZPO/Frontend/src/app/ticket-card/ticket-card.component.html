@@ -1,0 +1,9 @@
+<div class="ticket" [id]="ticket.id" (click)="openModal($event)">
+    <div id="date-th" *ngIf="!isMod() && !isAdmin()">{{ ticket.date }}</div>
+    <div id="id-th" *ngIf="isAdmin()">{{ ticket.id }}</div>
+    <div id="person-th" >{{ ticket.komputer }}</div>
+    <div id="pc-th" *ngIf="!isMod() && !isUser()">{{ ticket.user }}</div>
+    <div id="description-th" *ngIf="!isUser()">{{ ticket.opis }}</div>
+    <div id="employee-th" *ngIf="isAdmin()"> {{ ticket.pracownik }}</div>
+    <div id="status-th">{{ ticket.status }}</div>
+</div>

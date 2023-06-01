@@ -1,0 +1,110 @@
+#chart{
+    width: 800px;
+    height: 400px;
+}
+
+.frame{
+    margin-top: -25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    overflow: auto;
+
+}
+
+#main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#center{
+    width: 98%;
+}
+
+#header{
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    height: 30px;
+    line-height: 30px;
+    background: rgba(41, 128, 185, 0.92);
+    font-size: large;
+    color: white;
+    text-align: center;
+}
+
+#chekbox-input{
+    margin-top: 10px;
+   margin-left: 205px;
+}
+
+#sned{
+    margin-top: 10px;
+    margin-left: 350px;
+    height: 35px;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.input{
+    height: 15px;
+    width: 15px;
+    margin-left: 25px;
+}
+
+.input-text{
+    font-size: medium;
+    font-weight: 400;
+}
+
+#search{
+    margin-left: 175px;
+    margin-top: 10px;
+    height: 35px;
+    width: 450px;
+    display: block;
+    border-radius: 16px;
+    border: 0;
+    border: 1px solid lightgray;
+    background: transparent;
+    transition: border-color 0.2s;
+    outline: 0;
+    font-family: Bahnschrift;
+    font-size: large;
+    text-align: center;
+}
+
+#datepicker{
+    margin-top: 10px;
+    margin-left: 250px;
+    display: flex;
+}
+
+.datepicker{
+    height: 25px;
+    font-family: Bahnschrift;
+}
+
+#date-space{
+    width: 25px;
+    font-size: large;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+#date-space:after { content: '';
+  position: absolute;
+  border-right: 2px green solid;
+  transform: translateX(-50%);
+}
+#date-space:before { content: '';
+  position: absolute;
+  border-bottom: 3px rgba(41, 128, 185, 0.92) solid;
+  height: 25px;
+  width: 25px;
+  transform: translateY(-50%);
+}
+
+[hidden] {
+    display: none !important;
+}

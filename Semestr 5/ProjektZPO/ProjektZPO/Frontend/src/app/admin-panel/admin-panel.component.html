@@ -1,0 +1,18 @@
+<app-nav-bar></app-nav-bar>
+
+<div id="content">
+    <div id="new-ticket" class="frame">
+        <div class="header">Użytkownicy</div>
+        <ng-container #panel id="panel"></ng-container>
+        <button class="btn-green-round" id="add-new" (click)="createNew()">+</button>
+    </div>
+    <div id="reports" class="frame">
+        <div class="header">Zgłoszenia</div>
+        <div id="wrap-center">
+            <div id="tickets">
+                <app-ticket-card *ngFor="let element of tickets" [ticket]="element"></app-ticket-card>
+                <div id="bottom-space"></div>
+            </div>
+        </div>
+    </div>
+</div>

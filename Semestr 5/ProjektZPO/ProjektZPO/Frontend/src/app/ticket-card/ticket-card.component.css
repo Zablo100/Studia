@@ -1,0 +1,54 @@
+#date-th{
+    width: 15em;
+    padding-left: 25px;
+    pointer-events: none;
+  }
+
+  #id-th{
+    width: 5em;
+    padding-left: 25px;
+    pointer-events: none;
+  }
+  
+  #person-th{
+    width: 14.5em;
+    padding-left: 25px;
+    pointer-events: none;
+  }
+
+  #pc-th{
+    width: 14em;
+    pointer-events: none;
+  }
+  
+  #description-th{
+    width: 70em;
+    pointer-events: none;
+  }
+  #employee-th{
+    width: 12em;
+    pointer-events: none;
+  }
+  
+  #status-th{
+    width: 12em;
+    pointer-events: none;
+  }
+  
+  .ticket{
+    margin-top: 10px;
+    padding-top: 10px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 30px;
+    display: flex;
+    cursor: pointer;
+  }
+  
+  .ticket:hover{
+    transition: 0.25s ease-out;
+    transform: scale(1.02, 1.02);
+    border-color: #2980b9;
+  }

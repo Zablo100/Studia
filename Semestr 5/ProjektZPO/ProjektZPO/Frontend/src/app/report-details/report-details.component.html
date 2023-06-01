@@ -1,0 +1,42 @@
+<div id="top-panel">
+  <div id="info">
+    <div id="left-info">
+      <p class="info-text" *ngIf="isAdmin()">ID</p>
+      <p class="info-text">Status</p>
+      <p class="info-text" *ngIf="canView()">Osoba</p>
+      <p class="info-text" *ngIf="userRole == 'user'">Pracownik</p>
+      <p class="info-text">Data</p>
+      <p class="info-text" *ngIf="isAdmin()">Pracownik</p>
+    </div>
+    <div id="right-info">
+      <p class="info-text" *ngIf="isAdmin()">{{ report.id }}</p>
+      <p class="info-text">{{ report.status }} <button *ngIf="report.status == 'oczekujące' && canView()" id="accept-btn" class="btn-green-round" (click)="acceptTicket()">Przyjmnij</button></p> 
+      <p class="info-text" *ngIf="canView()">{{ report.user }}</p>
+      <p class="info-text" *ngIf="userRole == 'user'"> {{ report.pracownik }} </p>
+      <p class="info-text">{{ report.date }}</p> 
+      <p class="info-text" *ngIf="isAdmin()">{{ report.pracownik }} </p>
+      <form [formGroup]="changeEmpForm" (ngSubmit)="addEmpToTicket()">
+        <select formControlName="emp">
+          <option *ngFor="let emp of mods" [ngValue]="emp.username">{{emp.username}}</option>
+        </select>
+        
+        <button class="btn-red-round" type="submit">Przypisz</button>
+      </form>
+    </div>
+  </div>
+  <div id="left-space">
+    <button id="close-button" class="btn-red-round" (click)="closeDialog()">Zamknij</button>
+  </div>
+</div>
+<div id="description">
+  <p class="desc-text">{{ report.opis }}</p>
+</div>
+<div id="line"></div>
+<div id="comments">
+
+</div>
+<div id="comment-box" *ngIf="canView()">
+  <textarea id="comment-text-area" #comm maxlength="40"></textarea>
+  <button id="add-comment" class="btn-blue-round" (click)="addComment()">Dodaj wpis</button><br>
+  <button id="close-ticket" class="btn-green-round" (click)="closeTicket()">Zakończ zgłoszenie</button>
+</div>

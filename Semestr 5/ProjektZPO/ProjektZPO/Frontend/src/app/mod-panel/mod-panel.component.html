@@ -1,0 +1,29 @@
+<app-nav-bar></app-nav-bar>
+
+<div id="content">
+    <div id="tickets" class="frame">
+        <div class="header">Zgłoszenia</div>
+        <div class="wrapper">
+            <div class="center">
+                <app-ticket-card *ngFor="let element of myTickets" [ticket]="element"></app-ticket-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="frame" id="panel">
+        <div class="header">Panel moderacji</div>
+        <div id="search-bar">
+            <form [formGroup]="searchForm" (ngSubmit)="filterBySerachInput()">
+                <input id="search" formControlName="search" placeholder="Wpisz nazwę komputera lub użytkownika" autocomplete="off">
+            </form>
+        </div>
+
+
+        <div class="wrapper">
+            <div class="center">
+                <ng-container #searchOutput></ng-container>
+            </div>
+        </div>
+
+    </div>
+</div>

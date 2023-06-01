@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.btn-red-round{
+  border-radius: 50px;
+  border: none;
+  transition-duration: 0.4s; 
+  background-image: linear-gradient(to right, #eb3941, #da0b15);
+  color: #f7fff7;
+}
+
+.btn-red-round:hover{
+transition: .5 ease-in-out;
+box-shadow: 0 5px 15px rgba(255, 0, 8, 0.75);
+}
+
+.btn-red-round:active{
+transform: scale(0.98);
+opacity: 0.85;
+transition: 0.25ms;
+}
+
+.btn-blue-round{
+border-radius: 50px;
+border: none;
+background-image: linear-gradient(to right, #25aae1, #3f86ed);
+transition-duration: 0.4s;  
+color: #f7fff7;
+}
+
+.btn-blue-round:hover{
+transition: .5 ease-in-out;
+box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+
+.btn-blue-round:active{
+transform: scale(0.98);
+opacity: 0.85;
+transition: 0.25ms;
+}
+
+.btn-green-round{
+border-radius: 50px;
+border: none;
+transition-duration: 0.4s; 
+background-image: linear-gradient(to right, #0ba360, #2bc77b);
+color: #f7fff7;
+}
+
+.btn-green-round:hover{
+transition: .5 ease-in-out;
+box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+
+.btn-green-round:active{
+transform: scale(0.98);
+opacity: 0.85;
+transition: 0.25ms;
+}

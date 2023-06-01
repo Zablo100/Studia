@@ -1,0 +1,16 @@
+<app-nav-bar></app-nav-bar>
+<div id="options-bar"></div>
+
+
+<div id="ticket-table-div">
+    <div id="headers">
+        <div id="date-th" class="header">Data</div>
+        <div id="pc-th" class="header">Pracownik</div>
+        <div id="person-th" class="header">Zgłaszający</div>
+        <div id="description-th" class="header">Opis</div>
+        <div id="status-th" class="header">Status</div>
+    </div>
+    <div id="tickets">
+        <app-ticket-card *ngFor="let element of tickets" [ticket]="element"></app-ticket-card>
+    </div>
+</div>

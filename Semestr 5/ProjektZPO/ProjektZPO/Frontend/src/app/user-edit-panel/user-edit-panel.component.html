@@ -1,0 +1,23 @@
+<div id="c1">
+    <div id="c2">
+        <form [formGroup]="editForm" (ngSubmit)="submit()">
+            <span class="info-text-user">Użytkownik</span><br>
+            <input type="text" class="input-class" formControlName="username" placeholder="Wpisz nazwę" autocomplete="username"><br>
+            <span class="info-text-user">Hasło</span><br>
+            <input type="password" class="input-class" formControlName="password" placeholder="Wpisz nowe hasło" autocomplete="current-password"><br>
+            <span class="info-text-user">Rola</span><br>
+            <select formControlName="role" class="select-input"><br>
+                <option [ngValue]="0">Użytkownik</option>
+                <option [ngValue]="1">Moderator</option>
+                <option [ngValue]="2">Administrator</option>
+            </select><br>
+            <span class="info-text-user">Komputer</span><br>
+            <select formControlName="pc" class="select-input"><br>
+                <option [ngValue]="0">Brak</option>
+                <option *ngFor="let pc of pcList" [ngValue]="pc.id">{{pc.name}}</option>
+            </select><br>
+            <button class="btn-blue-round" id="save-user" type="submit">Zapisz</button>
+        </form>
+        <button class="btn-red-round" id="del" (click)="deleteUser()">Usuń</button>
+    </div>
+</div>

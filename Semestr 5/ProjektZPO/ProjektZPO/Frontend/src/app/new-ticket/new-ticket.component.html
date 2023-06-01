@@ -1,0 +1,7 @@
+<div id="inputs">
+    <form [formGroup]="userInputForm" (ngSubmit)="createNewTicket()" autocomplete="off">
+    <input formControlName="komputer" type="text" class="input" placeholder="Komputer" id="pc"><br />
+    <textarea formControlName="opis" class="input" id="problem" placeholder="Opisz swój problem ..."></textarea>
+    <button id="send" class="btn-blue-round" type="submit">Wyślij zgłoszenie</button>
+    </form>
+</div>

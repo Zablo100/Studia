@@ -1,0 +1,13 @@
+
+<div id="main-content">
+    <div id="wrapper">
+        <div id="logo">
+            <img src="\assets\xxx2.png"/>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="Login()">
+            <input formControlName="username" type="text" class="input" placeholder="Login" autocomplete="login"><br />
+            <input formControlName="password" type="password" class="input" placeholder="Hasło" autocomplete="password"><br />
+            <button id="xxx" type="submit">Zaloguj</button>
+        </form>
+    </div>
+</div>

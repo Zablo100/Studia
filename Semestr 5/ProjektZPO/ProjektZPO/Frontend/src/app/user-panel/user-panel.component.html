@@ -1,0 +1,13 @@
+<div id="content">
+    <div id="new-ticket" class="frame">
+        <div class="header">
+            <button (click)="newTicketform()" class="tablinks" id="btn1">Nowe zgłoszenie</button>
+            <button (click)="newOrderform()" class="tablinks">Now zamówienie</button>
+        </div>
+        <ng-container #newTicket id="newTicket"></ng-container>
+    </div>
+    <div id="reports" class="frame">
+        <div class="header">Twoje zgłoszenia</div>
+        <app-ticket-card *ngFor="let element of tickets" [ticket]="element"></app-ticket-card>
+    </div>
+</div>

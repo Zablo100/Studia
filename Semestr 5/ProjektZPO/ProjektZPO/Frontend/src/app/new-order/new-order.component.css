@@ -1,0 +1,66 @@
+#wrapper{
+    display: flex;
+    justify-content: center;
+
+}
+
+#order-selector{
+    margin-top: 50px;
+    margin-left: 175px;
+    height: 35px;
+    width: 200px;
+}
+
+#order-selector:focus{
+    border: 1px solid #0674f1;
+}
+
+.input{
+    display: block;
+    border-radius: 16px;
+    border: 0;
+    border: 1px solid lightgray;
+    background: transparent;
+    transition: border-color 0.2s;
+    outline: 0;
+    font-family: Bahnschrift;
+    font-size: large;
+    text-align: center;
+    margin-top: 15px;
+    
+}
+
+.input:focus::placeholder{
+    transition: 0.25s;
+    color: transparent;
+}
+
+.input:focus{
+    border: 1px solid #0674f1;
+}
+
+#amount{
+    margin-left: 75px;
+    height: 35px;
+    width: 400px;
+}
+
+#info{
+    height: 250px;
+    width: 550px;
+    resize: none;
+}
+
+#order-form{
+    width: 550px;
+}
+
+#send{
+    height: 50px;
+    width: 300px;
+    font-size: large;
+
+    margin-left: 125px;
+    margin-top: 15px;
+  }
+

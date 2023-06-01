@@ -1,0 +1,75 @@
+
+#main-content{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-size:100%;
+    height: 100%;
+    background-image: url("src/assets/test.jpg");
+}
+
+#logo{
+    text-align: center;
+}
+
+#wrapper{
+    margin-top: -75px;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+
+}
+
+#xxx{
+    margin-top: 40px;
+    height: 50px;
+    width: 200px;
+    border-radius: 50px;
+    border: none;
+    transition-duration: 0.4s; 
+    background-image: linear-gradient(to right, #29323c, #485563);
+    color: #f7fff7;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+#xxx:hover{
+    transition: .5 ease-in-out;
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}
+
+#xxx:active{
+    transform: scale(0.95);
+    transition: 0.25ms;
+}
+
+.input{
+
+    margin-top: 35px;
+    width: 300px;
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid #29323c;
+    background: transparent;
+    transition: border-color 0.2s;
+    outline: 0;
+    font-family: Bahnschrift;
+    font-size: large;
+    text-align: center;
+}
+
+
+input:focus::placeholder{
+    transition: 0.25s;
+    color: transparent;
+}
+
+input:focus{
+    border-bottom: 2px solid #0674f1;
+}

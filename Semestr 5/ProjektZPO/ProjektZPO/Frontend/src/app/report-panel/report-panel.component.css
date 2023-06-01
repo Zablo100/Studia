@@ -1,0 +1,70 @@
+  
+  #options-bar{
+    height: 100px;
+    width: 100%;
+  }
+  #ticket-table-div{
+    margin-left: 2.5%;
+    height: auto;
+    width: 95%;
+    
+  }
+  
+  #headers{
+    display: flex;
+    background: rgba(41, 128, 185, 0.92);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(41, 128, 185, 0.3);
+    height: 25px;
+  }
+  
+  .header{
+    font-size: large;
+    color: white;
+  }
+  
+  #date-th{
+    width: 200px;
+    padding-left: 50px;
+    pointer-events: none;
+  }
+  
+  #person-th{
+    width: 200px;
+    pointer-events: none;
+  }
+  
+  #description-th{
+    width: 1000px;
+    pointer-events: none;
+  }
+  #pc-th{
+    width: 200px;
+    pointer-events: none;
+  }
+  
+  #status-th{
+    pointer-events: none;
+  }
+  
+  .ticket{
+    margin-top: 10px;
+    padding-top: 10px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 30px;
+    display: flex;
+    cursor: pointer;
+  }
+  
+  .ticket:hover{
+    transition: 0.25s ease-out;
+    transform: scale(1.02, 1.02);
+    border-color: #2980b9;
+  }
+  
+
+  

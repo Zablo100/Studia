@@ -1,0 +1,91 @@
+#content{
+    display: flex;
+}
+
+.frame{
+    
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    overflow: auto;
+}
+
+.header{
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    height: 30px;
+    line-height: 30px;
+    background: rgba(41, 128, 185, 0.92);
+    font-size: large;
+    color: white;
+    text-align: center;
+}
+
+#panel{
+    height: 880px;
+    width: 1100px;
+    margin-left: 4%;
+    margin-top: -75px;
+}
+
+#tickets{
+    height: 880px;
+    width: 600px;
+    margin-left: 4%;
+    margin-top: -75px;
+    justify-content: center;
+}
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.center{
+    width: 98%;
+}
+
+#search-bar{
+    justify-content: center;
+    display: flex;
+    margin-top: 25px;
+}
+
+#search{
+    height: 35px;
+    width: 450px;
+    display: block;
+    border-radius: 16px;
+    border: 0;
+    border: 1px solid lightgray;
+    background: transparent;
+    transition: border-color 0.2s;
+    outline: 0;
+    font-family: Bahnschrift;
+    font-size: large;
+    text-align: center;
+    
+}
+
+#search:focus::placeholder{
+    transition: 0.25s;
+    color: transparent;
+}
+
+#search:hover{
+    border: 1px solid #0674f1;
+    transition: 0.25s;
+}
+
+
+#search:focus{
+    border: 1px solid #0674f1;
+}
+
+#searchBtn{
+    height: 35px;
+    width: 150px;
+    margin-left: 5px;
+}
+

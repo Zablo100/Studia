@@ -1,0 +1,105 @@
+#content{
+    display: flex;
+}
+
+.frame{
+    
+    height: 800px;
+    width: 800px;
+    margin-left: 4%;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    overflow: hidden;
+}
+
+#new-ticket{
+    margin-left: 7%;
+}
+
+.header{
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    height: 30px;
+    line-height: 30px;
+    background: rgba(41, 128, 185, 0.92);
+    font-size: large;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.tablinks{
+    margin-right: 10px;
+    position: relative;
+    background-color: transparent;
+    height: 30px;
+    line-height: 30px;
+    font-size: large;
+    color: white;
+  
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  
+    transition: 0.3s;
+  }
+  
+  .tablinks::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background: rgb(219, 11, 125);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .tablinks:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  #btn1{
+    margin-left: 26%;
+  }
+
+  #wrap-center{
+    display: flex;
+    justify-content: center;
+  }
+
+  #tickets{
+    height: 770px;
+    width: 95%;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  #bottom-space{
+    height: 10px;
+    width: 100%;
+  }
+
+
+  /* width  */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+
+#add-new{
+  position: absolute;
+  bottom: 4%;
+  right: 51%;
+  height: 50px;
+  width: 50px;
+  font-size: large;
+}

@@ -1,0 +1,12 @@
+<div id="wrapper">
+    <form id="order-form" [formGroup]="orderForm" (ngSubmit)="createNewOrder()">
+    <select formControlName="item" class="input" id="order-selector">
+        <option value="Myszka">Myszka</option>
+        <option value="Klawiatura">Klawiatura</option>
+        <option value="Monitor">Monitor</option>
+    </select>
+    <input formControlName="amount" type="number" class="input" placeholder="Ilość" id="amount" autocomplete="off" max="5" min="1">
+    <textarea formControlName="info" class="input" id="info" placeholder="Dodatkowe informacje"></textarea>
+    <button id="send" class="btn-blue-round" type="submit">Wyślij zgłoszenie</button>
+</form>
+</div>
